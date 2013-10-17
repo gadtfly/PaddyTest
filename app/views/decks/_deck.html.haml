@@ -1,0 +1,6 @@
+.deck
+  %h2= link_to deck.title, deck
+  %ul
+  - deck.cards.each do |card|
+    %li= link_to card.title, card
+  =link_to 'Delete', deck, method: :delete
