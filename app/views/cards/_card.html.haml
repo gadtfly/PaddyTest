@@ -1,4 +1,4 @@
-.card
+.card[card]
   %h2= link_to card.title, card
   %p=  card.description
-  =link_to 'Delete', card, method: :delete
+  =link_to 'Delete', card, method: :delete, remote: true
