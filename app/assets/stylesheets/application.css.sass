@@ -12,16 +12,18 @@
  *= require_tree .
  */
 
-.card
+.card, .deck
   width: 128px
   height: 192px
-  background-color: pink
   display: inline-block
   vertical-align: top
+  position: relative
+  footer
+    position: absolute
+    bottom: 4px
+
+.card
+  background-color: pink
 
 .deck
-  width: 128px
-  height: 192px
-  background-color: purple
-  display: inline-block
-  vertical-align: top
+  background-color: pink

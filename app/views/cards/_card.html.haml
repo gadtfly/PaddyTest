@@ -1,5 +1,6 @@
 .card{id: dom_id(card)}
   %h2= link_to card.title, card
   %p=  card.description
-  =link_to 'Edit', [:edit, card]
-  =link_to 'Delete', card, method: :delete, remote: true
+  %footer
+    =link_to 'Edit', [:edit, card]
+    =link_to 'Delete', card, method: :delete, remote: true
