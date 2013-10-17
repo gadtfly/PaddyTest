@@ -1,8 +1,9 @@
 .deck{id: dom_id(deck)}
   %h2= link_to deck.title, deck
   %ul
-  - deck.cards.each do |card|
-    %li{id: dom_id(card)}= link_to card.title, card
+    - deck.cards.each do |card|
+      %li{id: dom_id(card)}
+        = link_to card.title, card
   %footer
-    =link_to 'Edit', [:edit, deck]
-    =link_to 'Delete', deck, method: :delete, remote: true
+    = link_to 'Edit', [:edit, deck]
+    = link_to 'Delete', deck, method: :delete, remote: true
