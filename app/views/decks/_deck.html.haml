@@ -3,4 +3,5 @@
   %ul
   - deck.cards.each do |card|
     %li{id: dom_id(card)}= link_to card.title, card
+  =link_to 'Edit', [:edit, deck]
   =link_to 'Delete', deck, method: :delete, remote: true
