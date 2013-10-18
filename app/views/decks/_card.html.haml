@@ -1,0 +1,3 @@
+%div{class: dom_id(card)}
+  = link_to card.title, card
+  = link_to 'Remove', cards_decks_path(card_id: card.id, deck_id: deck.id), method: :delete, remote: true

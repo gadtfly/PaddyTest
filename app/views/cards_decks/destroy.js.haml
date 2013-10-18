@@ -1,2 +1,2 @@
-$('.deck .#{dom_id(@deck)}.#{dom_id(@card)}').remove()
-$('.card .#{dom_id(@deck)}.#{dom_id(@card)}').find('input').prop('checked', false)
+$('.#{dom_id(@deck)} .#{dom_id(@card)}').remove()
+$('.#{dom_id(@card)} .#{dom_id(@deck)} a').removeClass('selected').data('method', 'post')

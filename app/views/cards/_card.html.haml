@@ -1,11 +1,7 @@
 .card{class: dom_id(card)}
   %h2= link_to card.title, card
   %p=  card.description
-  %ul
-    - Deck.all.each do |deck|
-      %li{class: [dom_id(deck), dom_id(card)]}
-        = check_box_tag dom_id(deck, card.id), deck.id, card.decks.include?(deck)
-        = label_tag dom_id(deck, card.id), deck.title
+  .deck-list= render partial: 'cards/deck', collection: Deck.all, locals: {card: card}
   %footer
     = link_to 'Edit', [:edit, card]
     = link_to 'Delete', card, method: :delete, remote: true

@@ -1,0 +1,2 @@
+$('.#{dom_id(@deck)} .card-list').append('#{escape_javascript(render partial: 'decks/card', locals: {deck: @deck, card: @card})}')
+$('.#{dom_id(@card)} .#{dom_id(@deck)} a').addClass('selected').data('method', 'delete')

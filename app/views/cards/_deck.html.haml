@@ -1,0 +1,5 @@
+%div{class: dom_id(deck)}
+  - if card.decks.include?(deck)
+    = link_to deck.title, cards_decks_path(card_id: card.id, deck_id: deck.id), remote: true, method: :delete, class: :selected
+  - else
+    = link_to deck.title, cards_decks_path(card_id: card.id, deck_id: deck.id), remote: true, method: :post
