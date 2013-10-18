@@ -5,19 +5,13 @@ class CardsDecksController < ApplicationController
     @deck = Deck.find(params[:deck_id])
     @card = Card.find(params[:card_id])
     @deck.cards << @card
-    
-    respond_with(@card, @deck) do |f|
-      f.html { redirect_to :root }
-    end
+    respond_with(@card, @deck)
   end
 
   def destroy
     @deck = Deck.find(params[:deck_id])
     @card = Card.find(params[:card_id])
     @deck.cards.delete(@card)
-    
-    respond_with(@card, @deck) do |f|
-      f.html { redirect_to :root }
-    end
+    respond_with(@card, @deck)
   end
 end

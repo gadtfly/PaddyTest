@@ -20,27 +20,18 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(params[:card])
     @card.save
-    
-    respond_with(@card) do |f|
-      f.html { redirect_to @card }
-    end
+    respond_with(@card)
   end
 
   def update
     @card = Card.find(params[:id])
     @card.update_attributes(params[:card])
-    
-    respond_with(@card) do |f|
-      f.html { redirect_to @card }
-    end
+    respond_with(@card)
   end
 
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
-
-    respond_with(@card) do |f|
-      f.html { redirect_to :root }
-    end
+    respond_with(@card)
   end
 end

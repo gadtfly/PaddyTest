@@ -20,27 +20,18 @@ class DecksController < ApplicationController
   def create
     @deck = Deck.new(params[:deck])
     @deck.save
-    
-    respond_with(@deck) do |f|
-      f.html { redirect_to @deck }
-    end
+    respond_with(@deck)
   end
 
   def update
     @deck = Deck.find(params[:id])
     @deck.update_attributes(params[:deck])
-    
-    respond_with(@deck) do |f|
-      f.html { redirect_to @deck }
-    end
+    respond_with(@deck)
   end
 
   def destroy
     @deck = Deck.find(params[:id])
     @deck.destroy
-    
-    respond_with(@deck) do |f|
-      f.html { redirect_to :root }
-    end
+    respond_with(@deck)
   end
 end
