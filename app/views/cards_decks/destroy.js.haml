@@ -1,1 +1,2 @@
-$('.#{dom_id(@deck)} .#{dom_id(@card)}').remove()
+$('.deck .#{dom_id(@deck)}.#{dom_id(@card)}').remove()
+$('.card .#{dom_id(@deck)}.#{dom_id(@card)}').find('input').prop('checked', false)
