@@ -1,6 +1,6 @@
 .like
-  - if Like.where(likeable_id: likeable.id, likeable_type: likeable.class.to_s).first
-    = link_to "Unlike", [likeable, Like.where(likeable_id: likeable.id, likeable_type: likeable.class.to_s).first], remote: true, method: :delete
+  - if likeable.likes.first
+    = link_to "Unlike", [likeable, likeable.likes.first], remote: true, method: :delete
   - else
-    = link_to "Like", [likeable, :likes], remote: true, method: :post
+    = link_to "Like", [likeable, Like.new], remote: true, method: :post
   = "(#{likeable.likes.count})"
