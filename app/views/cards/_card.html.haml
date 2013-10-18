@@ -5,3 +5,4 @@
   %footer
     = link_to 'Edit', [:edit, card]
     = link_to 'Delete', card, method: :delete, remote: true
+    = render partial: 'likes/like', locals: { likeable: card }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131017200721) do
+ActiveRecord::Schema.define(:version => 20131018075010) do
 
   create_table "cards", :force => true do |t|
     t.string "title"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(:version => 20131017200721) do
 
   create_table "decks", :force => true do |t|
     t.string "title"
+  end
+
+  create_table "likes", :force => true do |t|
+    t.integer "likeable_id"
+    t.string  "likeable_type"
   end
 
 end
